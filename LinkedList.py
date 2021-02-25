@@ -43,6 +43,7 @@ class LinkedList:
             return counter
 
     def update(self, key, value):
+
         current = self.head
 
         found = False
@@ -61,9 +62,9 @@ class LinkedList:
 
         if current == None:
             # Change this too. Dont print if empty
-            print('The linked list is empty.')
+            pass
         else:
             for i in range(self.length()):
                 # Change below
-                print(f'Node {i}: {current.data}')
+                print(f' {current.data[0]} {current.data[1]}')
                 current = current.next

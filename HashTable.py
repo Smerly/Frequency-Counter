@@ -27,8 +27,19 @@ class HashTable:
 
     def hash_func(self, key):
         # word_length = len(key)
-        # index = word_length % size
+        # index = word_length % self.size
+        # return index
 
+        a_count = key.count('a')
+        e_count = key.count('e')
+        i_count = key.count('i')
+        o_count = key.count('o')
+        u_count = key.count('u')
+
+        vowel_count = a_count + e_count + i_count + \
+            o_count + u_count
+
+        index = vowel_count % self.size
         return index
 
     # 3️⃣ TODO: Complete the insert method.
@@ -45,18 +56,19 @@ class HashTable:
 
         # If not found, append
         if ll.find(key) == -1:
-          print(f"{key} was not found")
-          ll.append(new_data)
+            print(f"{key} was not found")
+            ll.append(new_data)
 
         else:
-          ll.update(key, value)
+            ll.update(key, value)
 
 
 # See LinkedList.py, print_nodes()
-  def print_key_values(self):
-    
-    for ll in self.arr:
-      ll.print_nodes()
+
+
+    def print_key_values(self):
+        for ll in self.arr:
+            ll.print_nodes()
         #
         # else:
 
@@ -72,10 +84,6 @@ class HashTable:
             # erase: 2
 
             # Go to LinkedList at print_nodes function and fix
-
-    def print_key_values(self):
-        for ll in self.arr:
-            ll.print_nodes()
 
     # TODO:
 

@@ -25,8 +25,13 @@
 # print(hash_position)
 
 
-color = ['red', 'white', 'yellow']
+# color = ['red', 'white', 'yellow']
 
 
-for colors in range(len(color)):
-    print(color[colors])
+# for colors in range(len(color)):
+#     print(color[colors])
+
+example = 'wdaubhiuwefbybwouidkbsunfw'
+
+
+print(example.count('w'))
