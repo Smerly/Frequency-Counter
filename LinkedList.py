@@ -13,24 +13,17 @@ class LinkedList:
         self.head = new_node
 
     def find(self, item):
-
         current = self.head
-
-        found = False
         counter = 0
 
-        while current != None and not found:
+        while current != None:
 
-            if current.data == item:
-                found = True
+            if current.data[0] == item:
+                return counter
             else:
                 current = current.next
                 counter += 1
-
-        if found:
-            return counter
-        else:
-            return -1
+        return -1
 
     def length(self):
         if self.head == None:
@@ -43,30 +36,39 @@ class LinkedList:
                 counter += 1
             return counter
 
-    def update(self, key, value):
+    # def update(self, key, value):
 
+    #     current = self.head
+
+    #     found = False
+    #     counter = 0
+
+    #     while current != None and not found:
+
+    #         if current.data[0] == key:
+    #             # counter += 1
+    #             # current = current.next
+    #             current.data = (current.data[0], current.data[1]+1)
+    #             # current.data = (current.data[0], current.data[1])
+    #         else:
+    #             current = current.next
+    #             counter += 1
+    #     # return counter
+
+    def put(self, item):
         current = self.head
-
-        found = False
-        counter = 12
-        while current != None and not found:
-
-            if current.data[0] == key:
-                # counter += 1
-                # current = current.next
-                current.data = (current.data[0], current.data[1]+1)
-                # current.data = (current.data[0], current.data[1])
-            else:
+        if current:
+            while current:
+                if current.data[0] == item:
+                    current.data = (current.data[0], current.data[1] + 1)
+                    return
                 current = current.next
-                counter += 1
-        # return counter
+        self.append((item, 1))
 
     def print_nodes(self):
         current = self.head
 
-        if current == None:
-            pass
-        else:
+        if current != None:
             for i in range(self.length()):
                 print(f' {current.data[0]} : {current.data[1]}')
                 current = current.next

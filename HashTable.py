@@ -16,9 +16,7 @@ class HashTable:
         arr = []
 
         for i in range(size):
-            new_ll = LinkedList()
-            arr.append(new_ll)
-
+            arr.append(LinkedList())
         return arr
 
     # 2️⃣ TODO: Create your own hash function.
@@ -26,9 +24,6 @@ class HashTable:
     # Hash functions are a function that turns each of these keys into an index value that we can use to decide where in our list each key:value pair should be stored.
 
     def hash_func(self, key):
-        # word_length = len(key)
-        # index = word_length % self.size
-        # return index
 
         # This orders the items from lowest amount of vowels to most amount of vowels
         a_count = key.count('a')
@@ -61,11 +56,11 @@ class HashTable:
             ll.append(new_data)
 
         else:
-            ll.update(key, value)
+            # ll.put(key, value)
+            self.arr[arr_index].put(key)
 
 
 # See LinkedList.py, print_nodes()
-
 
     def print_key_values(self):
         for ll in self.arr:
