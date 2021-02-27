@@ -1,4 +1,5 @@
 from Node import Node
+# from collections import Counter
 
 
 class LinkedList:
@@ -47,24 +48,25 @@ class LinkedList:
         current = self.head
 
         found = False
-        counter = 0
-
+        counter = 12
         while current != None and not found:
 
             if current.data[0] == key:
+                # counter += 1
+                # current = current.next
                 current.data = (current.data[0], current.data[1]+1)
+                # current.data = (current.data[0], current.data[1])
             else:
                 current = current.next
                 counter += 1
+        # return counter
 
     def print_nodes(self):
         current = self.head
 
         if current == None:
-            # Change this too. Dont print if empty
             pass
         else:
             for i in range(self.length()):
-                # Change below
-                print(f' {current.data[0]} {current.data[1]}')
+                print(f' {current.data[0]} : {current.data[1]}')
                 current = current.next

@@ -30,6 +30,7 @@ class HashTable:
         # index = word_length % self.size
         # return index
 
+        # This orders the items from lowest amount of vowels to most amount of vowels
         a_count = key.count('a')
         e_count = key.count('e')
         i_count = key.count('i')
